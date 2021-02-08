@@ -24,6 +24,11 @@ module.exports = {
         githubRepo: 'mthli/webrtc-tutorial',
         twitterHandle: 'mth_li',
 
+        // TODO
+        algoliaApiKey: '768e823959d35bbd51e4b2439be13fb7',
+        algoliaIndexName: 'apollodata',
+        gaTrackingId: 'UA-74643563-13',
+
         sidebarCategories: {
           null: [
             'index',
