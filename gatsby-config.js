@@ -1,40 +1,28 @@
-const themeOptions = require('gatsby-theme-apollo-docs/theme-options');
-
 module.exports = {
   pathPrefix: '/docs',
   plugins: [
     {
       resolve: 'gatsby-theme-apollo-docs',
       options: {
-        ...themeOptions,
         root: __dirname,
-        subtitle: 'Apollo Basics',
-        description: 'How to use the Apollo GraphQL platform',
-        githubRepo: 'apollographql/apollo',
-        spectrumPath: '/',
+        baseDir: 'docs',
+        contentDir: 'source',
+
+        siteName: 'WebRTC 学习指南',
+        pageTitle: 'WebRTC 学习指南',
+        description: 'Learning WebRTC the Hard Way 👀',
+        githubRepo: 'mthli/webrtc-tutorial',
+
         sidebarCategories: {
-          null: ['index', 'intro/platform', 'intro/benefits'],
+          null: [
+            'index',
+            'webrtc-compilation',
+          ],
           Tutorial: [
-            'tutorial/introduction',
-            'tutorial/schema',
-            'tutorial/data-source',
-            'tutorial/resolvers',
-            'tutorial/mutation-resolvers',
-            'tutorial/production',
-            'tutorial/client',
-            'tutorial/queries',
-            'tutorial/mutations',
-            'tutorial/local-state',
+            // TODO
           ],
-          'Development Tools': [
-            'devtools/cli',
-            'devtools/editor-plugins',
-            'devtools/apollo-config',
-          ],
-          Resources: [
-            '[Principled GraphQL](https://principledgraphql.com)',
-            'resources/graphql-glossary',
-            'resources/faq',
+          '参考资料': [
+            // TODO
           ],
         },
       },
