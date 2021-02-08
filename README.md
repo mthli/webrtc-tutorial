@@ -1,15 +1,31 @@
-# Apollo docs
+# WebRTC 学习指南
 
-The Apollo docs website is actually several individual websites, glued together using Netlify redirects (proxies). We use a [custom Gatsby theme](https://github.com/apollographql/gatsby-theme-apollo/tree/master/packages/gatsby-theme-apollo-docs) to share common layouts, plugins, and data sourcing logic between sites. The following is a listing of docs websites that we manage, and links to their respective GitHub repos.
+Learning WebRTC the Hard Way 👀
 
-| Docset | GitHub |
-| - | - |
-| [Basics](https://www.apollographql.com/docs/) | You are here |
-| [React](https://www.apollographql.com/docs/react/) | [Link](https://github.com/apollographql/apollo-client/tree/main/docs) |
-| [iOS](https://www.apollographql.com/docs/ios/) | [Link](https://github.com/apollographql/apollo-ios/tree/main/docs) |
-| [Android](https://www.apollographql.com/docs/android/) | [Link](https://github.com/apollographql/apollo-android/tree/main/docs) |
-| [Server](https://www.apollographql.com/docs/apollo-server/) | [Link](https://github.com/apollographql/apollo-server/tree/main/docs) |
-| [Federation](https://www.apollographql.com/docs/federation/) | [Link](https://github.com/apollographql/federation/tree/main/docs) |
-| [Studio](https://www.apollographql.com/docs/studio/) | [Link](../studio-docs) |
-| [Community](https://www.apollographql.com/docs/community/) | [Link](https://github.com/apollographql/community) |
-| [ScalaJS](https://www.apollographql.com/docs/scalajs/) | [Link](https://github.com/apollographql/apollo-scalajs/tree/master/docs) |
+**UNDER DEVELOPMENT** 🚧
+
+## License
+
+```text
+MIT License
+
+Copyright (c) 2021 Matthew Lee
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
