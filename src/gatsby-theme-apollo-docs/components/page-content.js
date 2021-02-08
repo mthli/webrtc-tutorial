@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { useRef, useState } from 'react';
+import Utterances from 'utterances-react'
 import SectionNav from './section-nav';
 import cn from 'classnames';
 import styled from '@emotion/styled';
@@ -8,7 +9,7 @@ import { HEADER_HEIGHT } from '../utils';
 import { IconGithub } from '@apollo/space-kit/icons/IconGithub';
 import { IconTwitter } from '@apollo/space-kit/icons/IconTwitter';
 import { IconStar } from '@apollo/space-kit/icons/IconStar';
-import { PageNav, breakpoints, colors } from 'gatsby-theme-apollo-core';
+import { /* PageNav, */ breakpoints, colors } from 'gatsby-theme-apollo-core';
 // import { ReactComponent as SpectrumLogo } from '../assets/spectrum.svg';
 import { withPrefix } from 'gatsby';
 
@@ -158,21 +159,21 @@ FeedbackLink.propTypes = {
   title: PropTypes.string.isRequired
 };
 
-const EditLink = styled.div({
-  display: 'none',
-  marginTop: 48,
-  justifyContent: 'flex-end',
-  [breakpoints.lg]: {
-    display: 'flex'
-  },
-  [breakpoints.md]: {
-    display: 'none'
-  },
-  [breakpoints.sm]: {
-    display: 'flex',
-    marginTop: 24
-  }
-});
+// const EditLink = styled.div({
+//   display: 'none',
+//   marginTop: 48,
+//   justifyContent: 'flex-end',
+//   [breakpoints.lg]: {
+//     display: 'flex'
+//   },
+//   [breakpoints.md]: {
+//     display: 'none'
+//   },
+//   [breakpoints.sm]: {
+//     display: 'flex',
+//     marginTop: 24
+//   }
+// });
 
 export default function PageContent(props) {
   const contentRef = useRef(null);
@@ -218,19 +219,25 @@ export default function PageContent(props) {
     );
   });
 
+  const utterances = props.githubUrl && (
+    <Utterances
+      async
+      repo={`${props.githubUrl.split('/').slice(3, 5).join('/')}`}
+      issueTerm="pathname"
+      crossorigin="anonymous"
+      theme="github-light"
+    />
+  );
+
   const editLink = props.githubUrl && (
-    <AsideLink href={
-      `${props.githubUrl.split('/').slice(0, 5).join('/')}/issues/new?title=${props.title}+${window.location.href}`
-    }>
-      <IconGithub /> Create GitHub Issue
+    <AsideLink href={props.githubUrl}>
+      <IconGithub /> 在 GitHub 编辑
     </AsideLink>
   );
 
   const tweetLink = (
-    <AsideLink
-      href={`https://twitter.com/share?url=${window.location.href}`}
-    >
-      <IconTwitter /> Share with Twitter
+    <AsideLink href={`https://twitter.com/share?url=${window.location.href}`}>
+      <IconTwitter /> 分享到 Twitter
     </AsideLink>
   )
 
@@ -245,11 +252,14 @@ export default function PageContent(props) {
         >
           {props.children}
         </BodyContent>
-        <EditLink>{editLink}</EditLink>
+        {/* <EditLink>{editLink}</EditLink> */}
+        {/*
         <PageNav
           prevPage={props.pages[pageIndex - 1]}
           nextPage={props.pages[pageIndex + 1]}
         />
+        */}
+        {utterances}
       </InnerWrapper>
       <Aside>
         <AsideHeading>{props.title}</AsideHeading>
