@@ -11,7 +11,7 @@ import { IconTwitter } from '@apollo/space-kit/icons/IconTwitter';
 import { IconStar } from '@apollo/space-kit/icons/IconStar';
 import { /* PageNav, */ breakpoints, colors } from 'gatsby-theme-apollo-core';
 // import { ReactComponent as SpectrumLogo } from '../assets/spectrum.svg';
-import { withPrefix } from 'gatsby';
+// import { withPrefix } from 'gatsby';
 
 const Wrapper = styled.div({
   display: 'flex',
@@ -211,6 +211,7 @@ export default function PageContent(props) {
     setImagesLoaded(prevImagesLoaded => prevImagesLoaded + 1);
   }
 
+  /*
   const pageIndex = props.pages.findIndex(page => {
     const prefixedPath = withPrefix(page.path);
     return (
@@ -218,6 +219,7 @@ export default function PageContent(props) {
       prefixedPath.replace(/\/$/, '') === props.pathname
     );
   });
+  */
 
   const utterances = props.githubUrl && (
     <Utterances
