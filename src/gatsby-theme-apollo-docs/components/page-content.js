@@ -13,6 +13,9 @@ import { /* PageNav, */ breakpoints, colors } from 'gatsby-theme-apollo-core';
 // import { ReactComponent as SpectrumLogo } from '../assets/spectrum.svg';
 // import { withPrefix } from 'gatsby';
 
+import { getWindow } from 'ssr-window';
+const window = getWindow();
+
 const Wrapper = styled.div({
   display: 'flex',
   alignItems: 'flex-start'
@@ -137,7 +140,7 @@ function FeedbackLink(props) {
   function handleClick(e) {
     e.preventDefault();
 
-    if (window.freddyWidget) {
+    if (window && window.freddyWidget) {
       window.freddyWidget.show({
         custom_fields: {
           title: props.title
@@ -237,7 +240,7 @@ export default function PageContent(props) {
     </AsideLink>
   );
 
-  const tweetLink = (
+  const tweetLink = window && (
     <AsideLink href={`https://twitter.com/share?url=${window.location.href}`}>
       <IconTwitter /> 分享到 Twitter
     </AsideLink>
