@@ -29,10 +29,6 @@ module.exports = {
         twitterHandle: 'mth_li',
         gaTrackingId: 'UA-70441776-3',
 
-        // TODO
-        algoliaApiKey: '768e823959d35bbd51e4b2439be13fb7',
-        algoliaIndexName: 'apollodata',
-
         sidebarCategories: {
           null: [
             'index',
