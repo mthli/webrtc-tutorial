@@ -1,3 +1,14 @@
+.book-image {
+  display: block;
+  float: left;
+  margin-right: 24px;
+  height: 480px;
+}
+
+.box-shadow {
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+}
+
 .title-sidebar {
   font-weight: 600;
   font-size: 1.125rem;

@@ -6,6 +6,14 @@ module.exports = {
   plugins: [
     'gatsby-plugin-sitemap',
     {
+      resolve: 'gatsby-remark-images',
+      options: {
+        maxWidth: 1080,
+        linkImagesToOriginal: false,
+        showCaptions: true,
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `WebRTC 学习指南`,
