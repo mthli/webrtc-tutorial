@@ -5,9 +5,8 @@ import SectionNav from './section-nav';
 import cn from 'classnames';
 import styled from '@emotion/styled';
 import useMount from 'react-use/lib/useMount';
-import { HEADER_HEIGHT, isSSR } from '../utils';
+import { HEADER_HEIGHT } from '../utils';
 import { IconGithub } from '@apollo/space-kit/icons/IconGithub';
-import { IconTwitter } from '@apollo/space-kit/icons/IconTwitter';
 import { IconStar } from '@apollo/space-kit/icons/IconStar';
 import { /* PageNav, */ breakpoints, colors } from 'gatsby-theme-apollo-core';
 // import { ReactComponent as SpectrumLogo } from '../assets/spectrum.svg';
@@ -137,7 +136,7 @@ function FeedbackLink(props) {
   function handleClick(e) {
     e.preventDefault();
 
-    if (!isSSR() && window.freddyWidget) {
+    if (window.freddyWidget) {
       window.freddyWidget.show({
         custom_fields: {
           title: props.title
@@ -237,12 +236,6 @@ export default function PageContent(props) {
     </AsideLink>
   );
 
-  const tweetLink = !isSSR() && (
-    <AsideLink href={`https://twitter.com/share?url=${window.location.href}`}>
-      <IconTwitter /> 分享到 Twitter
-    </AsideLink>
-  )
-
   return (
     <Wrapper>
       <InnerWrapper>
@@ -274,7 +267,6 @@ export default function PageContent(props) {
         )}
         {props.ffWidgetId && <FeedbackLink title={props.title} />}
         {editLink}
-        {tweetLink}
         {/*
         {props.spectrumUrl && (
           <AsideLink href={props.spectrumUrl}>
