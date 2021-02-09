@@ -1,6 +1,10 @@
 module.exports = {
   pathPrefix: '/',
+  siteMetadata: {
+    siteUrl: 'https://webrtc.mthli.com',
+  },
   plugins: [
+    'gatsby-plugin-sitemap',
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -41,6 +45,9 @@ module.exports = {
             // TODO
           ],
           '丢包处理': [
+            // TODO
+          ],
+          '数据监控': [
             // TODO
           ],
           '参考资料': [

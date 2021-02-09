@@ -7,6 +7,7 @@ export default function CustomSEO({ image, baseUrl, twitterHandle, ...props }) {
   const imagePath = withPrefix('/' + image);
   return (
     <SEO {...props} twitterCard="summary_large_image" favicon="/favicon-32x32.png">
+      <meta name="google-site-verification" content="-qgu2UvNRmKmA2nlvPii0Ij_5KvDP7CoiPrrrt7fCDw" />
       <meta property="og:image" content={imagePath} />
       {baseUrl && <meta name="twitter:image" content={baseUrl + imagePath} />}
       {twitterHandle && (
