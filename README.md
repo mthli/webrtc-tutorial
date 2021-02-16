@@ -4,7 +4,7 @@
 
 Learning WebRTC the Hard Way 👀
 
-👉 <https://webrtc.mthli.com>
+<https://webrtc.mthli.com>
 
 ## Archives
 

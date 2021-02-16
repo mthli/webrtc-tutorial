@@ -4,25 +4,7 @@ module.exports = {
     siteUrl: 'https://webrtc.mthli.com',
   },
   plugins: [
-    'gatsby-plugin-sharp',
     'gatsby-plugin-sitemap',
-    'gatsby-transformer-sharp',
-    {
-      resolve: 'gatsby-transformer-remark',
-      options: {
-        plugins: [
-          'gatsby-remark-images-zoom',
-          {
-            resolve: 'gatsby-remark-images',
-            options: {
-              maxWidth: 1080,
-              linkImagesToOriginal: false,
-              showCaptions: true,
-            },
-          },
-        ],
-      },
-    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
