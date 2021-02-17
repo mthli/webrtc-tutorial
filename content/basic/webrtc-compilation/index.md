@@ -1,6 +1,7 @@
 ---
 title: 编译源码
 description: 大约需要四个小时，请保持耐心 🙏
+ogImage: './vagrant.png'
 ---
 
 在正式开始之前，我们需要一个可以运行的 WebRTC 环境。由于笔者是 Android 开发，因此本文将根据 [官方文档](https://webrtc.googlesource.com/src/+/refs/heads/master/docs/native-code/android/index.md) 将 WebRTC 编译到 Android（iOS 的编译方法则可以参见 [这个链接](https://webrtc.googlesource.com/src/+/refs/heads/master/docs/native-code/ios/index.md)）。

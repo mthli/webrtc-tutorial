@@ -16,7 +16,7 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-theme-apollo-docs',
+      resolve: '@mthli/gatsby-theme-apollo-docs',
       options: {
         root: __dirname,
         baseDir: '/',
