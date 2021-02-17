@@ -12,7 +12,7 @@ export default function Logo() {
   return (
     <Wrapper>
       <img
-        style={{ width: '32px' }}
+        style={{ maxWidth: '32px' }}
         src={withPrefix('/icons/icon-96x96.png')}
         alt={'logo'}
       />

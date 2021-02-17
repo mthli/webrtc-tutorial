@@ -15,7 +15,7 @@ class MobileLogo extends React.PureComponent {
         <img
           style={{
             margin: 0,
-            width: '32px',
+            maxWidth: '32px',
            }}
           src={withPrefix('/icons/icon-96x96.png')}
           alt={'logo'}
