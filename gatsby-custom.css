@@ -1,3 +1,7 @@
+body {
+  color: #2F353F; /* colors.black.lighter */
+}
+
 .book-image {
   display: block;
   float: left;
