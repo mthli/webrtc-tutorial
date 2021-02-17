@@ -24,6 +24,7 @@ module.exports = {
 
         siteName: 'WebRTC 学习指南',
         pageTitle: 'WebRTC 学习指南',
+        baseUrl: 'https://webrtc.mthli.com',
         description: 'Learning WebRTC the Hard Way 👀',
         githubRepo: 'mthli/webrtc-tutorial',
         twitterHandle: 'mth_li',
