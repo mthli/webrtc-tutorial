@@ -22,7 +22,7 @@ $ vagrant up
 $ vagrant ssh
 ```
 
-![vagrant 命令行操作示例](./vagrant.png)
+![](./vagrant.png)
 
 **接下来所有操作都将 vagrant 虚拟机中进行。**如果你想退出虚拟机，输入 logout 即可。
 
@@ -50,7 +50,7 @@ $ fetch --nohooks webrtc_android
 $ gclient sync
 ```
 
-![fetch --nohooks webrtc_android](./fetch.png)
+![](./fetch.png)
 
 下载的代码包含正常的 WebRTC 分支和 Android 分支。Android 分支包含 SDK 和 NDK（大约 8GB），而所有代码大约 16GB。这份代码既可以被用来进行 Android 开发，也可以被用来进行正常的 Linux 开发。因为 WebRTC 使用 [Ninja](https://ninja-build.org/) 作为其构建系统，你只需要在不同路径下生成不同的编译配置即可（当然这就是另一个话题了）。
 
@@ -90,7 +90,7 @@ $ ./tools_webrtc/android/build_aar.py -h
 $ ./tools_webrtc/android/build_aar.py
 ```
 
-![./tools_webrtc/android/build_aar.py](./build.png)
+![](./build.png)
 
 如图，编译结果 libwebrtc.aar 默认位于 `~/webrtc/src` 目录下，包含了 armeabi-v7a、arm64-v8a、x86 和 x86_64 四种架构的 .so（可以通过 -h 查看如何只编译指定架构的包）。
 
