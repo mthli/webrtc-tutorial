@@ -11,7 +11,6 @@
     "gatsby-plugin-manifest": "^2.12.0",
     "gatsby-plugin-sitemap": "^2.12.0",
     "gatsby-remark-footnotes": "^0.0.8",
-    "gatsby-remark-katex": "^3.10.0",
     "gatsby-remark-smartypants": "^2.10.0",
     "react": "16.13.1",
     "react-dom": "16.12.0",

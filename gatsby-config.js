@@ -31,7 +31,6 @@ module.exports = {
         gaTrackingId: 'UA-70441776-3',
 
         gatsbyRemarkPlugins: [
-          'gatsby-remark-katex',
           'gatsby-remark-smartypants',
           {
             resolve: 'gatsby-remark-footnotes',
