@@ -30,12 +30,26 @@ module.exports = {
         twitterHandle: 'mth_li',
         gaTrackingId: 'UA-70441776-3',
 
+        gatsbyRemarkPlugins: [
+          'gatsby-remark-katex',
+          'gatsby-remark-smartypants',
+          {
+            resolve: 'gatsby-remark-footnotes',
+            options: {
+              footnoteBackRefPreviousElementDisplay: 'inline',
+              footnoteBackRefDisplay: 'inline',
+              footnoteBackRefAnchorStyle: 'text-decoration: none;',
+            },
+          },
+        ],
+
         sidebarCategories: {
           null: [
             'index',
             'basic/webrtc-compilation/index',
           ],
           '基础知识': [
+            'basic/p2p-hole-punching/index',
             // TODO
           ],
           '连接流程': [

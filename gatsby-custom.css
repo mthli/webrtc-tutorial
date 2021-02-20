@@ -2,6 +2,11 @@ body {
   color: #2F353F; /* colors.black.lighter */
 }
 
+/* Inline */
+:not(pre) > code[class*="language-"] {
+  white-space: pre-wrap;
+}
+
 .book-image {
   display: block;
   float: left;

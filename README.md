@@ -10,6 +10,7 @@ Learning WebRTC the Hard Way 👀
 
 - [前言](https://webrtc.mthli.com/)
 - [编译源码](https://webrtc.mthli.com/basic/webrtc-compilation/)
+- [P2P 打洞原理](https://webrtc.mthli.com/basic/p2p-hole-punching/)
 
 ## License
 
