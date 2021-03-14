@@ -46,6 +46,7 @@ module.exports = {
           null: [
             'index',
             'basic/webrtc-compilation/index',
+            'basic/webrtc-breakpoint/index',
           ],
           '基础知识': [
             'basic/p2p-hole-punching/index',

@@ -1,7 +1,7 @@
 ---
 title: 编译源码
 description: 大约需要四个小时，请保持耐心 🙏
-ogImage: './vagrant.png'
+ogImage: '../../assets/book.jpg'
 ---
 
 在正式开始之前，我们需要一个可以运行的 WebRTC 环境。由于笔者是 Android 开发，因此本文将根据 [官方文档](https://webrtc.googlesource.com/src/+/refs/heads/master/docs/native-code/android/index.md) 将 WebRTC 编译到 Android（iOS 的编译方法则可以参见 [这个链接](https://webrtc.googlesource.com/src/+/refs/heads/master/docs/native-code/ios/index.md)）。
@@ -10,7 +10,7 @@ ogImage: './vagrant.png'
 
 编译到 Android **必须**使用 Linux 开发环境；对于 Windows 而言，可以使用 [WSL](https://docs.microsoft.com/zh-cn/windows/wsl/) 环境。笔者使用的是 macOS，尽管与 Linux 同为类 Unix 系统，但也是不能直接编译到 Android 的。不过没关系，我们可以借助 [vagrant](https://learn.hashicorp.com/tutorials/vagrant/getting-started-index?in=vagrant/getting-started) 很方便地搭建起 Linux 开发环境。
 
-首先我们需要下载并安装 [VirtualBox](https://www.virtualbox.org/)；接着执行 `brew install vagrant` 安装 vagrant，安装完毕后重启终端使之生效。接着执行如下命令：
+首先我们需要下载并安装 [VirtualBox](https://www.virtualbox.org/)；接着执行 `brew install vagrant` 安装 vagrant（基于 VirtualBox 搭建开发环境）。然后执行如下命令：
 
 ```bash
 # 创建并切换到 ~/vagrant 目录
@@ -25,11 +25,11 @@ $ vagrant ssh
 
 ![](./vagrant.png)
 
-**接下来所有操作都将 vagrant 虚拟机中进行。**如果你想退出虚拟机，输入 logout 即可。
+**接下来所有操作都将在虚拟机中进行。**如果你想登出虚拟机，输入 logout 即可。
 
 ## 获取源码
 
-首先我们需要将 [depot_tools](https://commondatastorage.googleapis.com/chrome-infra-docs/flat/depot_tools/docs/html/depot_tools_tutorial.html#_setting_up) clone 到本地。我们都知道 WebRTC 是 Chromium 项目的一部分，而 depot_tools 便是为了组织和管理 Chromium 这个庞大代码库而设计的 git 工作流增强工具集合。执行如下命令即可：
+首先我们需要将 [depot_tools](https://commondatastorage.googleapis.com/chrome-infra-docs/flat/depot_tools/docs/html/depot_tools_tutorial.html#_setting_up) clone 到本地。我们都知道 WebRTC 是 Chromium 项目的一部分，而 depot_tools 便是为了组织和管理 Chromium 这个庞大代码库而设计的 Git 工作流增强工具集合。执行如下命令即可：
 
 ```bash
 $ git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
@@ -97,8 +97,8 @@ $ ./tools_webrtc/android/build_aar.py
 
 ## Demo
 
-执行 `cp libwebrtc.aar /vagrant` 将 libwebrtc.aar 拷贝到 `/vagrant` 目录，这个目录是 vagrant 虚拟机与宿主机的共享文件目录。对于本文而言，宿主机（macOS）对应的目录为 `~/vagrant`，即我们一开始搭建环境的目录。
+执行 `cp libwebrtc.aar /vagrant` 将 libwebrtc.aar 拷贝到 `/vagrant` 目录，这个目录是虚拟机与宿主机（macOS）的共享文件目录。对于本文而言，宿主机（macOS）对应的目录为 `~/vagrant` ，即我们一开始搭建环境的目录。
 
-WebRTC 官方提供了一个名为 AppRTC 的 demo，但将它导入 Android Studio 的过程非常繁琐，且依赖复杂。这里笔者提供了一个整理后的版本 [mthli/YaaRTC](https://github.com/mthli/YaaRTC)，读者可以自行将其中的 `app/libs/libwebrtc.aar` 替换为自己编译出来的 aar 进行测试。
+WebRTC 官方提供了一个名为 AppRTC 的 demo，但将它导入 Android Studio 的过程非常繁琐，且依赖复杂。这里笔者提供了一个整理后的版本 [mthli/YaaRTC](https://github.com/mthli/YaaRTC)，读者可以自行将其中的 `app/libs/libwebrtc.aar` 替换为自己编译出来的 libwebrtc.aar 进行测试。
 
-读者可以在浏览器端访问 [https://appr.tc](https://appr.tc)，然后在 YaaRTC 里输入相同的房间号并加入之。只要能双向视频成功，就说明我们编译出来 libwebrtc.aar 是没问题的啦 🍻
+读者可以在浏览器端访问 [https://appr.tc](https://appr.tc)，然后在 YaaRTC 里输入相同的房间号并加入之。只要能双向视频成功，就说明我们编译出来的 libwebrtc.aar 是没问题的啦 🍻

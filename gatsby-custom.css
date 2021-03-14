@@ -23,3 +23,8 @@ body {
   font-size: 1.125rem;
   color: #2F353F;
 }
+
+.gatsby-code-title {
+  overflow: scroll;
+  padding-right: 19px;
+}
