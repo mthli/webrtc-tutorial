@@ -14,7 +14,7 @@ const ExpandAll = styled.button(smallCaps, {
   display: 'flex',
   alignItems: 'center',
   marginBottom: 12,
-  padding: '4px 0',
+  padding: 0,
   border: 0,
   fontSize: 12,
   fontWeight: 600,
@@ -53,6 +53,9 @@ const StyledListItem = styled.li({
       color: colors.primary,
       pointerEvents: 'none'
     }
+  },
+  ':first-child': {
+    marginTop: '6px'
   }
 });
 

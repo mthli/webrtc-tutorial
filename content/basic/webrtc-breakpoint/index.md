@@ -1,6 +1,6 @@
 ---
 title: 断点调试
-description: 简单有效的 Android 调试方法 🤔
+description: 简单有效的 Android 调试方法 🐛
 ogImage: '../../assets/book.jpg'
 ---
 

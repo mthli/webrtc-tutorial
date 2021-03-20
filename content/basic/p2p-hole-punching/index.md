@@ -1,6 +1,6 @@
 ---
 title: P2P 打洞原理
-description: 需要公网服务器支持 🤔
+description: 需要公网服务器支持 🐰
 ogImage: './hole-punching.png'
 ---
 
