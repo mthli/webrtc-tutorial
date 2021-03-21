@@ -1,7 +1,7 @@
 ---
-title: ICE 简单入门
+title: ICE 简单流程
 description: 根据不同的 NAT 类型，需要使用不同的方式打洞 🤝
-ogImage: '../../assets/book.jpg'
+ogImage: './ice.png'
 ---
 
 在 [上篇文章](https://webrtc.mthli.com/basic/p2p-hole-punching/) 中，我们大致了解了 P2P 的打洞原理。但实际情况比理论要复杂得多。**经典的** NAT（NAPT）可分为完全圆锥型、受限圆锥型、端口受限圆锥型和对称型四种，需要借助 ICE（Interactive Connectivity Establishment，交互式连接建立）框架辅助连接。
