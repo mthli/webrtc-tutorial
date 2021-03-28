@@ -51,6 +51,7 @@ module.exports = {
           '基础知识': [
             'basic/p2p-hole-punching/index',
             'basic/ice-stun-turn/index',
+            'basic/sdp-introduction/index',
             'basic/mesh-mcu-sfu/index',
             // TODO
           ],
