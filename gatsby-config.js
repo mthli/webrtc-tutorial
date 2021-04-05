@@ -59,6 +59,10 @@ module.exports = {
             // TODO
           ],
           '丢包处理': [
+            'lost/video-frame-words/index',
+            // TODO
+          ],
+          '拥塞处理': [
             // TODO
           ],
           '数据监控': [
