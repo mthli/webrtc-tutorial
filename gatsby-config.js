@@ -60,7 +60,7 @@ module.exports = {
           ],
           '丢包处理': [
             'lost/video-frame-words/index',
-            'lost/rtp/index',
+            'lost/rtp-introduction/index',
             // TODO
           ],
           '拥塞处理': [
