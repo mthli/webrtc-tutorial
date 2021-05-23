@@ -17,6 +17,7 @@ Learning WebRTC the Hard Way 👀
 - [多人会议服务端架构](https://webrtc.mthli.com/basic/mesh-mcu-sfu/)
 - [视频帧名词解释](https://webrtc.mthli.com/lost/video-frame-words/)
 - [RTP 协议介绍](https://webrtc.mthli.com/lost/rtp-introduction/)
+- [临界锁实现](https://webrtc.mthli.com/code/criticalsection/)
 
 ## License
 

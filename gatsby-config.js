@@ -70,6 +70,7 @@ module.exports = {
             // TODO
           ],
           '编程模型': [
+            'code/criticalsection/index',
             // TODO
           ],
           '常见问题': [
