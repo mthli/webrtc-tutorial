@@ -63,9 +63,6 @@ module.exports = {
             'lost/rtp-introduction/index',
             // TODO
           ],
-          '拥塞处理': [
-            // TODO
-          ],
           '数据监控': [
             // TODO
           ],
