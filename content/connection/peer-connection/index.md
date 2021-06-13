@@ -13,7 +13,7 @@ ogImage: './peer-connection.png'
 这里针对时序图中的一些情况做具体说明：
 
 1. 上图不完全是 API 的调用流程，读者在编程时仍需参考 WebRTC 的文档或源码注释。
-2. 先进入房间的用户是发起方（Indicator），后进入房间的用户是参与者（Participant）。如果参与者进房时信令服务器已经有 offerSdp 甚至（发起方的）ICE candidate 信息了，则信令服务器可以将它们与 ICE server addr 一起返回。
+2. 先进入房间的用户是发起方（Indicator），后进入房间的用户是参与者（Participant）。如果参与者进房时信令服务器已经有 offerSdp 甚至（发起方的）ICE candidate 信息了，则信令服务器可以将它们与 ICE server addr 一起返回给参与者。
 3. add audio & video tracks 不是连接流程中的关键步骤，也可以在 ICE 流程之后再执行。
 5. 在 SetLocalDescription 执行成功后，协商 SDP 和 ICE candidate 的流程便会同时开始。
 6. 通话双方均与选定的 ICE 服务器连接成功后，即可开始相互推流。
