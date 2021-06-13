@@ -8,7 +8,7 @@ ogImage: './peer-connection.png'
 
 假定读者已经阅读过「基础知识」中的内容，对信令（signaling）服务器、ICE 服务器等概念都有所了解，那么没有什么比一张时序图更加简洁清晰的了：
 
-![PeerConnection 连接流程](./peer-connection.png)
+![](./peer-connection.png)
 
 这里针对时序图中的一些情况做具体说明：
 
