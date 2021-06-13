@@ -54,7 +54,7 @@ STUN（Session Traversal Utilities for NAT，NAT 会话穿越应用程序）是�
 
 ![](./ice.png)
 
-当路径终点为红色时，是无法建立 UDP 连接的；而如果不是红色，则可以建立 UDP 连接。
+当路径终点为灰色时，是无法建立 UDP 连接的；而如果不是灰色，则可以建立 UDP 连接。
 
 ## TURN
 
