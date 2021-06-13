@@ -77,7 +77,7 @@ WebRTC 设备之间建立连接先需要获得彼此的 SDP。而设备是无穷
 
 ## 交换过程
 
-WebRTC 使用 [PeerConnection](https://webrtc.googlesource.com/src/webrtc/+/f54860e9ef0b68e182a01edc994626d21961bc4b/pc/peerconnection.h) 这个类创建连接，它包含两个生成 SDP 的方法，分别是 `CreateOffer()` 和 `CreateAnswer()`，前者由会话发起方调用生成 offerSdp 并发送到信令服务器；后者在应答方在收到信令服务器消息后被调用生成 answerSdp，然后也发送回信令服务器。
+WebRTC 使用 [PeerConnection](https://webrtc.googlesource.com/src/+/refs/heads/master/pc/peer_connection.h) 这个类创建连接，它包含两个生成 SDP 的方法，分别是 `CreateOffer()` 和 `CreateAnswer()`，前者由会话发起方调用生成 offerSdp 并发送到信令服务器；后者在应答方在收到信令服务器消息后被调用生成 answerSdp，然后也发送回信令服务器。
 
 PeerConnection 还包含两个设置 SDP 的方法，分别是 `SetLocalDescription()` 和 `SetRemoteDescription()`，前者用来设置本地（自己）的 localSdp，后者用来设置接收到的对端 remoteSdp。对于会话发起方而言，localSdp 即是 offerSdp，remoteSdp 即是 answerSdp；对于应答方而言，localSdp 即是 answerSdp，而 remoteSdp 即是接收到的 offerSdp。
 
