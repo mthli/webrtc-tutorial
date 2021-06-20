@@ -69,4 +69,4 @@ class signal_with_thread_policy : public _signal_base<mt_policy> {
 
 熟悉 C++ 的读者一眼就可以看出 `lock_block<mt_policy> lock(this);` 使用了 C++ [RAII](https://zh.cppreference.com/w/cpp/language/raii) 机制创造出了一段函数生命周期内的临界区。不熟悉的读者可以参见 [临界锁实现](../criticalsection)。
 
-这里的 `mt_policy` 可以指定锁的类型，比如全局锁或对象锁，当然也可以选择不加锁（即 `lock_block` 内部为空实现）。其实在 WebRTC 99% 的代码中使用的都是不加锁模式，因为其内部维护着良好的线程模型，回调会被切换到对应类型的线程上执行，基本不存在线程竞争问题。关于 WebRTC 的线程模型笔者将会在后续文章中进行讲解。
+这里的 `mt_policy` 可以指定锁的类型，比如全局锁或对象锁，当然也可以选择不加锁（即 `lock_block` 内部为空实现）。其实在 WebRTC 99% 的代码中使用的都是不加锁模式，因为其内部维护着良好的多线程模型，回调会被切换到对应类型的线程上执行，基本不存在线程竞争问题。关于 WebRTC 的多线程模型笔者将会在后续文章中进行讲解。
