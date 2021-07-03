@@ -198,9 +198,9 @@ public final class Example implements VideoProcessor {
     // DO SOMETHING IF YOU WANT.
   }
 
-  // 需要持有 WebRTC 传入的 VideoSink 对象
   @Override
   public void setSink(@Nullable VideoSink sink) {
+    // 需要持有 WebRTC 传入的 VideoSink 对象
     mVideoSink = sink;
   }
 
