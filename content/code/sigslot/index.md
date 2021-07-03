@@ -15,7 +15,7 @@ bool PeerConnection::Initialize(/* args... */) {
   transport_controller_.reset(new JsepTransportController(/* args... */));
   // 调用 connect 时需要传入两个参数，即接收回调的对象的指针，和回调方法的指针
   transport_controller_->SignalIceConnectionState.connect(
-    this, &PeerConnection::OnTransportControllerConnectionState);
+      this, &PeerConnection::OnTransportControllerConnectionState);
 
   // method body...
 }
