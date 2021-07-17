@@ -30,7 +30,7 @@ template("android_clang_toolchain") {
 ...
 ```
 
-接着我们可以根据 [编译源码](https://webrtc.mthli.com/basic/webrtc-compilation/) 进行编译，不过我们需要添加一些 build_aar.py 的编译参数：
+接着我们可以根据 [编译源码](../webrtc-compilation/) 进行编译，不过我们需要添加一些 build_aar.py 的编译参数：
 
 ```bash
 $ ./tools_webrtc/android/build_aar.py \
@@ -60,7 +60,7 @@ end
 
 然后再执行 `vagrant up` 重启虚拟机，再执行 `vargant ssh` 登录虚拟机。此时再执行批量拷贝源码到本机就不会再遇到权限问题了。
 
-PS，聪明的读者可能已经想到，如果从最开始 [编译源码](https://webrtc.mthli.com/basic/webrtc-compilation/) 时就直接把源码 fetch 到共享目录，本机和虚拟机不就可以共享同一份源码了嘛？笔者最初也是这样想的，可是在共享目录并不能编译成功。感兴趣的读者可以自己试一试，如果有解决方案可以留言评论 😄
+PS，聪明的读者可能已经想到，如果从最开始 [编译源码](../webrtc-compilation/) 时就直接把源码 fetch 到共享目录，本机和虚拟机不就可以共享同一份源码了嘛？笔者最初也是这样想的，可是在共享目录并不能编译成功。感兴趣的读者可以自己试一试，如果有解决方案可以留言评论 😄
 
 ## 断点调试配置
 

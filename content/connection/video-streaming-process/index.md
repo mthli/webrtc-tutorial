@@ -18,7 +18,7 @@ public interface VideoCapturer {
       SurfaceTextureHelper surfaceTextureHelper,
       Context applicationContext,
       CapturerObserver capturerObserver);
-  // other defines...
+  // other definitions...
 }
 ```
 
@@ -26,7 +26,7 @@ SurfaceTextureHelper 是封装了 [SurfaceTexture](https://source.android.com/de
 
 ```java:title=Camera2Session.java
 private class CameraStateCallback extends CameraDevice.StateCallback {
-  // other defines...
+  // other definitions...
 
   @Override
   public void onOpened(CameraDevice camera) {
@@ -43,7 +43,7 @@ private class CameraStateCallback extends CameraDevice.StateCallback {
     }
   }
 
-  // other defines...
+  // other definitions...
 }
 ```
 
@@ -55,7 +55,7 @@ private class CameraStateCallback extends CameraDevice.StateCallback {
 
 ```java:title=CapturerObserver.java
 public interface CapturerObserver {
-  // other defines...
+  // other definitions...
   /** Delivers a captured frame. */
   void onFrameCaptured(VideoFrame frame);
 }
@@ -65,10 +65,10 @@ public interface CapturerObserver {
 
 ```java:title=VideoSource.java
 public class VideoSource extends MediaSource {
-  // other defines...
+  // other definitions...
 
   private final CapturerObserver capturerObserver = new CapturerObserver() {
-    // other defines...
+    // other definitions...
 
     @Override
     public void onFrameCaptured(VideoFrame frame) {
@@ -83,7 +83,7 @@ public class VideoSource extends MediaSource {
     }
   };
 
-  // other defines...
+  // other definitions...
 }
 ```
 
@@ -145,10 +145,10 @@ webrtc::VideoStreamEncoder::OnFrame
 
 这里分别对调用栈中标记的序号做说明：
 
-1. 这里的编码器是 LibvpxVp8Encoder，但换成其他继承自 `webrtc::VideoEncoder` 的子类都是可以的，比如 `webrtc::VP9Encoder` 或者 `webrtc::H264Encoder` 。
+1. 这里的编码器是 LibvpxVp8Encoder，但换成其他继承自 `webrtc::VideoEncoder` 的子类都是可以的，比如 VP9Encoder 或者 H264Encoder。
 2. RtpPacket 入队之后，将由 `webrtc::ProcessThreadImpl::Process` 进行处理，严格意义上已经不算是调用栈了，但读者也可以将其理解为 RtpPacket 的处理流程。
 3. `webrtc::ModuleRtpRtcpImpl2` 是 WebRTC m85 及其之后版本的新实现。
-4. 从这里开始进入 PeerConnection 发送数据包的流程，笔者将在后续文章中介绍。
+4. 从这里开始进入 PeerConnection 发送数据包的流程。
 
 ## 添加滤镜
 
@@ -156,10 +156,10 @@ webrtc::VideoStreamEncoder::OnFrame
 
 ```java:title=VideoSource.java
 public class VideoSource extends MediaSource {
-  // other defines...
+  // other definitions...
 
   private final CapturerObserver capturerObserver = new CapturerObserver() {
-    // other defines...
+    // other definitions...
 
     @Override
     public void onFrameCaptured(VideoFrame frame) {
@@ -177,7 +177,7 @@ public class VideoSource extends MediaSource {
     }
   };
 
-  // other defines...
+  // other definitions...
 }
 ```
 

@@ -48,6 +48,5 @@ DTS: 1 3 2 5 4 7 6 9 8
 
 以上便是 WebRTC 中常见的视频帧名词了，理解这些名词有助于我们后续理解 WebRTC 的 NACK、PIL 和 FIR 等丢包处理机制。当然，本文也仅仅涉及了视频编码的基础内容，更多编码相关的内容已经超出了笔者目前的能力范围，感兴趣的读者可以自行深入。
 
-[^1]: 这是一种不严谨的描述，因为描述带宽的单位通常是 bit 而不是 byte。
-
+[^1]: 这是一种不严谨的描述，因为描述带宽的单位通常是 bit 而不是 byte
 [^2]: 引用自文章 [Things You Wanted to Know About Compression but Were Afraid to Ask](https://www.bhphotovideo.com/explora/video/tips-and-solutions/compression-a-basic-understanding)

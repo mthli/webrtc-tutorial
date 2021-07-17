@@ -169,7 +169,7 @@ SR 和 RR 具有相同的 report block 结构，其中各个字段的含义分�
 [^1]: 参见维基百科 [资源预留协议](https://zh.wikipedia.org/wiki/%E8%B5%84%E6%BA%90%E9%A2%84%E7%95%99%E5%8D%8F%E8%AE%AE)
 [^2]: 引用自维基百科 [Real-time Transport Protocol](https://en.m.wikipedia.org/wiki/Real-time_Transport_Protocol)
 [^3]: 参见 PDF [7.4.5 Coordination of Video Orientation](https://www.etsi.org/deliver/etsi_ts/126100_126199/126114/12.07.00_60/ts_126114v120700p.pdf)
-[^4]: 只有刚连接时的 RT(D)P 包和视频发生旋转时的 RT(D)P 包才会携带旋转角度信息。
+[^4]: 只有刚连接时的 RT(D)P 包和视频发生旋转时的 RT(D)P 包才会携带旋转角度信息
 [^5]: 完整代码可以参见 [RtpPacket.hpp#L432](https://github.com/versatica/mediasoup/blob/v3/worker/include/RTC/RtpPacket.hpp#L432)
 [^6]: 参见 [RFC 5761 - Multiplexing RTP Data and Control Packets on a Single Port](https://tools.ietf.org/html/rfc5761)
 [^7]: 引用自维基百科 [RTP Control Protocol](https://en.m.wikipedia.org/wiki/RTP_Control_Protocol)

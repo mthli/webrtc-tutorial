@@ -73,7 +73,7 @@ WebRTC 设备之间建立连接先需要获得彼此的 SDP。而设备是无穷
 
 信令服务器除了被用来交换 SDP，还会被用来维护进房逻辑、传递用户的状态（比如开关摄像头）等。饶是如此，信令服务器并不是 WebRTC 的一部分，你可以使用自己喜欢的 Web 后端框架实现它，比如 [Django](https://github.com/django/django)、[Gin](https://github.com/gin-gonic/gin) 或者 [Koa](https://github.com/koajs/koa)。
 
-此外，在 [ICE 交互流程介绍](https://webrtc.mthli.com/basic/ice-stun-turn/) 中我们提到，WebRTC 需要借助 ICE 服务器进行 P2P 打洞连接。那么这里的 ICE 服务器可以和信令服务器是同一个服务，也可以是分别独立的服务。独立的服务可能有利于后端横向扩容，不过这超出了本文的讨论范围。笔者在实际项目中使用的 WebRTC 框架是 [mediasoup](https://mediasoup.org/)，它同时集成了 ICE 和信令两个功能，即同一个服务（简单）。
+此外，在 [ICE 交互流程介绍](../ice-stun-turn/) 中我们提到，WebRTC 需要借助 ICE 服务器进行 P2P 打洞连接。那么这里的 ICE 服务器可以和信令服务器是同一个服务，也可以是分别独立的服务。独立的服务可能有利于后端横向扩容，不过这超出了本文的讨论范围。笔者在实际项目中使用的 WebRTC 框架是 [mediasoup](https://mediasoup.org/)，它同时集成了 ICE 和信令两个功能，即同一个服务（简单）。
 
 ## 交换过程
 

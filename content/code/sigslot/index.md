@@ -26,13 +26,13 @@ bool PeerConnection::Initialize(/* args... */) {
 ```cpp:title=jesp_transport_controller.h
 class JsepTransportController : /* extends... */ {
  public:
-  // other defines...
+  // other definitions...
 
   // sigslot::signal 支持操作符重载，
   // void operator()(Args... args) { emit(args...); }
   sigslot::signal1<cricket::IceConnectionState> SignalIceConnectionState;
 
-  // other defines...
+  // other definitions...
 }
 ```
 
@@ -55,7 +55,7 @@ WebRTC 使用的 [sigslot](http://sigslot.sourceforge.net/) 实现要求接收�
 ```cpp:title=sigslot.h
 template <class mt_policy, typename... Args>
 class signal_with_thread_policy : public _signal_base<mt_policy> {
-  // other defines...
+  // other definitions...
 
   void emit(Args... args) {
     // highlight-next-line
@@ -63,7 +63,7 @@ class signal_with_thread_policy : public _signal_base<mt_policy> {
     // method body...
   }
 
-  // other defines...
+  // other definitions...
 };
 ```
 

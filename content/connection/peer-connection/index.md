@@ -17,4 +17,4 @@ ogImage: './peer-connection.png'
 3. add audio & video tracks 不是连接流程中的关键步骤，也可以在 ICE 流程之后再执行。
 5. 在 SetLocalDescription 执行成功后，协商 SDP 和 ICE candidate 的流程便会同时开始。
 6. 通话双方均与选定的 ICE 服务器连接成功后，即可开始相互推流。
-7. 在 [多人会议服务端架构](https://webrtc.mthli.com/basic/mesh-mcu-sfu/) 中，一般由 SFU 服务器同时充当 ICE 服务器的角色。
+7. 在 [多人会议服务端架构](../../basic/mesh-mcu-sfu/) 中，一般由 SFU 服务器同时充当 ICE 服务器的角色。

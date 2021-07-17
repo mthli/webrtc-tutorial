@@ -57,6 +57,7 @@ module.exports = {
           ],
           '连接流程': [
             'connection/peer-connection/index',
+            'connection/ice-connection-sorting/index',
             'connection/video-streaming-process/index',
             // TODO
           ],

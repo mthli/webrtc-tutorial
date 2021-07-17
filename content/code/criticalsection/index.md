@@ -35,7 +35,7 @@ CritScope::~CritScope() {
 ```java:title=ReentrantLock
 class X {
   private final ReentrantLock lock = new ReentrantLock();
-  // other defines...
+  // other definitions...
 
   public void m() {
     lock.lock();  // block until condition holds
