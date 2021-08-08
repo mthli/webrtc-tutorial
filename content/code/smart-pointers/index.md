@@ -105,7 +105,7 @@ rtc::scoped_refptr<VideoRtpSender> VideoRtpSender::Create(
 
 之所以不使用 `std::shared_ptr`，一部分当然是历史原因，显然在 C++ 11 出现之前，`rtc::scoped_refptr` 就已经存在了。但更重要的是，`std::shared_ptr` 并没有给 WebRTC（以及 Chromium）带来显著的收益，且由于缺少了类型限制，反而会导致引用计数的滥用。
 
-**在 C++ 中使用引用计数会导致对象所有权不够明确，析构的时机也会变得难以理解，尤其是在多线程环境中。**所以我们应该尽量少地使用引用计数，比如尽量使用单线程模型。
+**在 C++ 中使用引用计数会导致对象所有权不够明确，析构的时机也会变得难以理解，尤其是在多线程环境中。**所以我们应该尽可能少地使用引用计数，比如尽量使用单线程模型。
 
 WebRTC（以及 Chromium）的代码中已经存在大量的引用计数，但这不意味着你也可以随意使用引用计数。根据 [proposal: allow std::shared\_ptr and std::unique\_ptr](https://groups.google.com/a/chromium.org/g/cxx/c/aT2wsBLKvzI) 的讨论，编程人员应该在设计类的时候就决策好这个类是否可以被引用计数；如果不能被引用计数，就不要继承自 `rtc::RefCountInterface` 。
 
