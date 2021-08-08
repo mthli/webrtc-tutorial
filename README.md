@@ -22,6 +22,7 @@ Learning WebRTC the Hard Way 👀
 - [RTP 协议介绍](https://webrtc.mthli.com/lost/rtp-introduction/)
 - [临界锁实现](https://webrtc.mthli.com/code/criticalsection/)
 - [信号槽机制](https://webrtc.mthli.com/code/sigslot/)
+- [智能指针](https://webrtc.mthli.com/code/smart-pointers/)
 
 ## License
 

@@ -72,6 +72,7 @@ module.exports = {
           '编程模型': [
             'code/criticalsection/index', // FIXME critical-section
             'code/sigslot/index',
+            'code/smart-pointers/index',
             // TODO
           ],
           '常见问题': [
