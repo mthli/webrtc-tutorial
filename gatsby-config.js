@@ -61,7 +61,7 @@ module.exports = {
             'connection/video-streaming-process/index',
             // TODO
           ],
-          '丢包处理': [
+          '弱网优化': [
             'lost/video-frame-words/index',
             'lost/rtp-introduction/index',
             // TODO
