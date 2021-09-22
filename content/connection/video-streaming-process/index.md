@@ -147,7 +147,7 @@ webrtc::VideoStreamEncoder::OnFrame
 
 1. 这里的编码器是 LibvpxVp8Encoder，但换成其他继承自 `webrtc::VideoEncoder` 的子类都是可以的，比如 VP9Encoder 或者 H264Encoder。
 2. RtpPacket 入队之后，将由 `webrtc::ProcessThreadImpl::Process` 进行处理，严格意义上已经不算是调用栈了，但读者也可以将其理解为 RtpPacket 的处理流程。
-3. `webrtc::ModuleRtpRtcpImpl2` 是 WebRTC m85 及其之后版本的新实现。
+3. `webrtc::ModuleRtpRtcpImpl2` 是 WebRTC M85 (branch-heads/4183) 版本的新实现。
 4. 从这里开始进入 PeerConnection 发送数据包的流程。
 
 ## 添加滤镜

@@ -55,7 +55,7 @@ $ gclient sync
 
 下载的代码包含正常的 WebRTC 分支和 Android 分支。Android 分支包含 SDK 和 NDK（大约 8GB），而所有代码大约 16GB。这份代码既可以被用来进行 Android 开发，也可以被用来进行正常的 Linux 开发。因为 WebRTC 使用 [Ninja](https://ninja-build.org/) 作为其构建系统，你只需要在不同路径下生成不同的编译配置即可（当然这就是另一个话题了）。
 
-相信你已经执行完上述所有流程了。此时你应该位于 WebRTC 的 master 分支，但我们一般不直接使用 master，而是应该切换到最近一个 release 版本。[可以在这里获取到所有 release 信息](https://webrtc.github.io/webrtc-org/release-notes/)。截止到本文撰写的时间，最新的 release 版本为 m85 (branch-heads/4183)
+相信你已经执行完上述所有流程了。此时你应该位于 WebRTC 的 master 分支，但我们一般不直接使用 master，而是应该切换到最近一个 release 版本。[可以在这里获取到所有 release 信息](https://webrtc.github.io/webrtc-org/release-notes/)。截止到本文撰写的时间，最新的 release 版本为 M85 (branch-heads/4183)。
 
 ```bash
 # 下载的代码位于 ~/webrtc/src
