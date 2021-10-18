@@ -4,7 +4,7 @@ description: 简单有效的 Android 调试方法 🐛
 ogImage: '../../assets/book.jpg'
 ---
 
-WebRTC 在 Android 上的断点调试还是比较麻烦的，目前中文互联网引用得比较多的这篇 [macOS 下单步调试 WebRTC Android & iOS](https://blog.piasy.com/2018/08/14/build-webrtc/index.html) 在笔者看来显得复杂了。笔者结合另一篇文章 [WebRTC Android 的调试](http://blog.pprtc.com/2020/10/14/WebRTC-Android-debug/) 给出一个简单有效的 Android 调试方法（原文略显晦涩）。
+WebRTC 在 Android 上的断点调试还是比较麻烦的，目前中文互联网引用得比较多的这篇 [*macOS 下单步调试 WebRTC Android & iOS*](https://blog.piasy.com/2018/08/14/build-webrtc/index.html) 在笔者看来显得复杂了。笔者结合另一篇文章 [*WebRTC Android 的调试*](http://blog.pprtc.com/2020/10/14/WebRTC-Android-debug/) 给出一个简单有效的 Android 调试方法（原文略显晦涩）。
 
 ## 编译 Debug 包
 
