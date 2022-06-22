@@ -8,7 +8,7 @@ ogImage: '../../assets/book.jpg'
 
 ## 搭建环境
 
-编译到 Android **必须**使用 Linux 开发环境；对于 Windows 而言，可以使用 [WSL](https://docs.microsoft.com/zh-cn/windows/wsl/) 环境。笔者使用的是 macOS，尽管与 Linux 同为类 Unix 系统，但也是不能直接编译到 Android 的。不过没关系，我们可以借助 [vagrant](https://learn.hashicorp.com/tutorials/vagrant/getting-started-index?in=vagrant/getting-started) 很方便地搭建起 Linux 开发环境。
+编译到 Android 必须使用 Linux 开发环境；对于 Windows 而言，可以使用 [WSL](https://docs.microsoft.com/zh-cn/windows/wsl/) 作为开发环境。笔者使用的是 macOS，尽管与 Linux 同为类 Unix 系统，但也是不能直接编译到 Android 的。不过没关系，我们可以借助 [vagrant](https://learn.hashicorp.com/tutorials/vagrant/getting-started-index?in=vagrant/getting-started) 很方便地搭建起 Linux 开发环境。
 
 首先我们需要下载并安装 [VirtualBox](https://www.virtualbox.org/)；接着执行 `brew install vagrant` 安装 vagrant（基于 VirtualBox 搭建开发环境）。然后执行如下命令：
 
@@ -53,9 +53,9 @@ $ gclient sync
 
 ![](./fetch.png)
 
-下载的代码包含正常的 WebRTC 分支和 Android 分支。Android 分支包含 SDK 和 NDK（大约 8GB），而所有代码大约 16GB。这份代码既可以被用来进行 Android 开发，也可以被用来进行正常的 Linux 开发。因为 WebRTC 使用 [Ninja](https://ninja-build.org/) 作为其构建系统，你只需要在不同路径下生成不同的编译配置即可（当然这就是另一个话题了）。
+下载的代码包含正常的 WebRTC 分支和 Android 分支；Android 分支包含 SDK 和 NDK。这份代码既可以被用来进行 Android 开发，也可以被用来进行正常的 Linux 开发。因为 WebRTC 使用 [Ninja](https://ninja-build.org/) 作为其构建系统，你只需要在不同路径下生成不同的编译配置即可。
 
-相信你已经执行完上述所有流程了。此时你应该位于 WebRTC 的 master 分支，但我们一般不直接使用 master，而是应该切换到最近一个 release 版本。[可以在这里获取到所有 release 信息](https://webrtc.github.io/webrtc-org/release-notes/)。截止到本文撰写的时间，最新的 release 版本为 M85 (branch-heads/4183)。
+相信你已经执行完上述所有流程了。此时你应该位于 WebRTC 的 master 分支，但我们一般不直接使用 master，而是应该切换到最近一个 release 版本，[可以在这里获取到所有 release 信息](https://chromiumdash.appspot.com/branches)。本文选取的 release 版本为 M85 (branch-heads/4183)。
 
 ```bash
 # 下载的代码位于 ~/webrtc/src
@@ -79,7 +79,7 @@ $ git merge master
 
 ## 编译源码
 
-执行如下命令，安装编译 WebRTC 所需的依赖然后编译。需要大约 60 分钟，请保持耐心 🙏
+执行如下命令，安装 WebRTC 所需的依赖然后编译。需要大约 60 分钟，请保持耐心 🙏
 
 ```bash
 # 安装编译 WebRTC 所需的依赖
@@ -102,3 +102,7 @@ $ ./tools_webrtc/android/build_aar.py
 WebRTC 官方提供了一个名为 AppRTC 的 demo，但将它导入 Android Studio 的过程非常繁琐，且依赖复杂。这里笔者提供了一个整理后的版本 [mthli/YaaRTC](https://github.com/mthli/YaaRTC)，读者可以自行将其中的 `app/libs/libwebrtc.aar` 替换为自己编译出来的 libwebrtc.aar 进行测试。
 
 读者可以在浏览器端访问 [https://appr.tc](https://appr.tc)，然后在 YaaRTC 里输入相同的房间号并加入之。只要能双向视频成功，就说明我们编译出来的 libwebrtc.aar 是没问题的啦 🍻
+
+---
+
+**目前 [https://appr.tc](https://appr.tc) 已被 Google 停用，有能力的读者可以自行搭建 [webrtc/apprtc](https://github.com/webrtc/apprtc) 服务。**
