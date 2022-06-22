@@ -133,3 +133,7 @@ settings set target.source-map ./../../../home/vagrant/webrtc/src /Users/minglia
 可以看到，我们已经成功打上断点了。有了断点调试能力以后，我们便可以深入源码学习 WebRTC 了；本书后续亦将结合源码，解构 WebRTC 的内部流程 🍻
 
 在实际的团队开发 WebRTC 的过程中，可能是由某一方同时维护和输出包含全部调试信息的 Debug 包，和去除所有调试信息的 Release 包。对于其他开发同学而言，即可使用上述 LLDB 路径替换的方式，将自己本机的 WebRTC 源码与 Debug 包关联起来，一劳永逸。
+
+---
+
+**目前 [https://appr.tc](https://appr.tc) 已被 Google 停用，有能力的读者可以自行搭建 [webrtc/apprtc](https://github.com/webrtc/apprtc) 服务。**

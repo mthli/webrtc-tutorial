@@ -4,7 +4,7 @@ description: WebRTC 连接流程的 Controller 👨‍💼
 ogImage: './peer-connection.png'
 ---
 
-[PeerConnection](https://webrtc.googlesource.com/src/+/refs/heads/master/pc/peer_connection.h) 是 WebRTC 连接流程中无法绕过的一个类，甚至可以认为这个类是整个连接流程的 Controller。本文着重介绍双人通话（一对一）的连接流程，读者可以很轻易地将其推演至多人通话（一对多、多对多）的场景。建议结合 [mthli/YaaRTC](https://github.com/mthli/YaaRTC) 的源码学习。
+[PeerConnection](https://webrtc.googlesource.com/src/+/refs/heads/master/pc/peer_connection.h) 是 WebRTC 连接流程中无法绕过的一个类，甚至可以认为这个类是整个连接流程的 Controller。本文着重介绍双人通话（一对一）的连接流程，读者可以很轻易地将其推演至多人通话（一对多、多对多）的场景。
 
 假定读者已经阅读过「基础知识」中的内容，对信令（signaling）服务器、ICE 服务器等概念都有所了解，那么没有什么比一张时序图更加简洁清晰的了：
 

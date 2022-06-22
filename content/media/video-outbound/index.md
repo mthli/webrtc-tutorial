@@ -8,7 +8,7 @@ ogImage: './grafika.png'
 
 ## 采集
 
-采集的实现强烈依赖系统提供的相机 API，但渲染、编码和发送过程与则系统无关。由于笔者是 Android 开发，因此这部分内容将围绕 Android 展开（iOS 应该大同小异）。建议读者结合 [mthli/YaaRTC](https://github.com/mthli/YaaRTC) 的源码阅读。
+采集的实现强烈依赖系统提供的相机 API，但渲染、编码和发送过程与则系统无关。由于笔者是 Android 开发，因此这部分内容将围绕 Android 展开（iOS 应该大同小异）。
 
 当我们需要开启摄像头时，可以调用 WebRTC 提供的 VideoCapturer，这个类（的具体实现）封装并统一了 Android Camera 与 [Camera2](https://developer.android.com/training/camera2) 两套 API 的行为，其初始化方法的定义如下：
 
