@@ -133,22 +133,21 @@ webrtc::VideoStreamEncoder::OnFrame
   → webrtc::PacedSender::Process #2
   → webrtc::PacingController::ProcessPackets
   → webrtc::PacedSender::SendRtpPacket
-  → webrtc::ModuleRtpRtcpImpl2::TrySendPacket #3
+  → webrtc::ModuleRtpRtcpImpl2::TrySendPacket
   → webrtc::RtpSenderEgress::SendPacket
   → webrtc::RtpSenderEgress::SendPacketToNetwork
   → cricket::WebRtcVideoChannel::SendRtp
   → cricket::MediaChannel::SendPacket
   → cricket::MediaChannel::DoSendPacket
   → cricket::VideoChannel::SendPacket
-  → webrtc::DtlsSrtpTransport::SendRtpPacket #4
+  → webrtc::DtlsSrtpTransport::SendRtpPacket #3
 ```
 
 这里分别对调用栈中标记的序号做说明：
 
 1. 这里的编码器是 LibvpxVp8Encoder，但换成其他继承自 `webrtc::VideoEncoder` 的子类都是可以的，比如 VP9Encoder 或者 H264Encoder。
 2. RtpPacket 入队之后，将由 `webrtc::ProcessThreadImpl::Process` 进行处理，严格意义上已经不算是调用栈了，但读者也可以将其理解为 RtpPacket 的处理流程。
-3. `webrtc::ModuleRtpRtcpImpl2` 是 WebRTC M85 (branch-heads/4183) 版本的新实现。
-4. 从这里开始进入 PeerConnection 发送数据包的流程。
+3. 从这里开始进入 PeerConnection 发送数据包的流程。
 
 ## 添加滤镜
 

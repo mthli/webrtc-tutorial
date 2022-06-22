@@ -17,7 +17,7 @@ Learning WebRTC the Hard Way 👀
 - [多人会议服务端架构](https://webrtc.mthli.com/basic/mesh-mcu-sfu/)
 - [PeerConnection 连接流程](https://webrtc.mthli.com/connection/peer-connection/)
 - [ICE 连接排序规则](https://webrtc.mthli.com/connection/ice-connection-sorting/)
-- [视频推流过程](https://webrtc.mthli.com/connection/video-streaming-process/)
+- [视频推流过程](https://webrtc.mthli.com/media/video-outbound/)
 - [视频帧名词解释](https://webrtc.mthli.com/lost/video-frame-words/)
 - [RTP 协议介绍](https://webrtc.mthli.com/lost/rtp-introduction/)
 - [临界锁实现](https://webrtc.mthli.com/code/criticalsection/)
