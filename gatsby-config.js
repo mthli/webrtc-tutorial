@@ -69,9 +69,6 @@ module.exports = {
             'lost/video-frame-words/index',
             // TODO
           ],
-          '数据监控': [
-            // TODO
-          ],
           '编程模型': [
             'code/criticalsection/index', // FIXME critical-section
             'code/sigslot/index',

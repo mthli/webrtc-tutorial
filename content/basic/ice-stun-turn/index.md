@@ -1,14 +1,14 @@
 ---
 title: ICE 交互流程介绍
 description: 根据不同的 NAT 类型，需要使用不同的方式打洞 🤝
-ogImage: './ice.png'
+ogImage: './stun.png'
 ---
 
 在 [上篇文章](../p2p-hole-punching/) 中，我们大致了解了 P2P 的打洞原理。但实际情况比理论要复杂得多。**经典的** NAT（NAPT）可分为完全圆锥型、受限圆锥型、端口受限圆锥型和对称型四种，需要借助 ICE（Interactive Connectivity Establishment，交互式连接建立）框架辅助连接。
 
 之所以强调是经典的，是因为这四种类型最早由 [RFC 3489](https://tools.ietf.org/html/rfc3489) 定义；但后来的实践证明市场上的 NAT 实现远不止这四种类，于是便在 [RFC 5389](https://tools.ietf.org/html/rfc5389) 中做了修正。不过这并不妨碍我们简单理解 ICE 的交互过程。本文依然以经典的 NAT 类型为主；对于两份 RFC 的不同之处，感兴趣的读者可以参考这个链接 [STUN (RFC 3489) vs. STUN (RFC 5389/5780)](https://netmanias.com/en/post/techdocs/6065/nat-network-protocol/stun-rfc-3489-vs-stun-rfc-5389-5780)。
 
-## 完全圆锥形
+## 完全圆锥型
 
 ![](./full-cone.png)
 
@@ -48,13 +48,21 @@ ogImage: './ice.png'
 
 ## STUN
 
-STUN（Session Traversal Utilities for NAT，NAT 会话穿越应用程序）是一种允许位于 NAT 之后的客户端找出自己的公网地址，并判断出 NAT 限制其直连的方法的协议。获取到的信息会被用来位于 NAT 之后的客户端之间创建 UDP 连接。
+STUN（Session Traversal Utilities for NAT，NAT 会话穿越应用程序）是一种允许位于 NAT 之后的客户端找出自己的公网地址，并判断出 NAT 限制其直连的方法的协议。
 
-以下是一张符合 [RFC 3489](https://tools.ietf.org/html/rfc3489) 定义的经典 STUN 算法图。注意，虽然 [RFC 5389](https://tools.ietf.org/html/rfc5389) 更加合理但也更加复杂，而 RFC 3489 足以让我们理解 STUN 是什么以及怎样工作的。
+下图是 [RFC 3489](https://datatracker.ietf.org/doc/html/rfc3489#section-10.1) 中给出的 STUN 工作流程。其中不可避免地涉及到了 STUN 协议的一些细节，但其实读者不需要对 STUN 协议特别了解也能大致理解该流程。
 
-![](./ice.png)
+![](./stun.png)
 
-当路径终点为灰色时，是无法建立 UDP 连接的；而如果不是灰色，则可以建立 UDP 连接。
+在测试 1 中，客户端发送的 STUN Binding Req 既不需要设置 `CHANGE-REQUEST` 属性中的任何标志位，也不需要设置 `RESPONSE-ADDRESS` 属性；服务器会向 Req 对应的地址和端口号发送 Binding Resp。如果客户端没有收到 Resp，则说明所在网络禁用了 UDP；如果客户端收到了 Resp，则会检查 Resp 的 `MAPPED-ADDRESS` 属性，如果其中的地址和端口号与 Req 对应的地址和端口号相同，则说明此时客户端至少不在 NAT 之后。然后进行测试 2。
+
+在测试 2 中，客户端发送的 STUN Binding Req 需要同时设置 `CHANGE-REQUEST` 属性中的「改变 IP」和「改变端口号」标志位。如果客户端没有收到 Resp，则说明此时客户端位于对称型 UDP 防火墙之后（一种类似对称型 NAT 的防火墙）；如果客户端收到了 Resp，则说明此时客户端可以直接访问公网（或者，至少位于一个类似完全圆锥型 NAT 的防火墙之后）。这里防火墙与 NAT 的区别是，防火墙没有地址转换（translation）。
+
+回到测试 1，如果客户端发现 Resp 的 `MAPPED-ADDRESS` 属性中的地址和端口号与 Req 对应的地址和端口号不同，则说明此时客户端位于 NAT 之后。然后进行测试 2，如果客户端收到了 Resp，则说明此时客户端位于完全圆锥型 NAT 之后；如果客户端没有收到 Resp，则再次进行测试 1，只不过这次客户端发送的目标地址和端口号取自之前测试 1 的 Resp 的 `CHANGED-ADDRESS` 属性中的地址和端口号。对比前后两次测试 1 返回的 Resp 的 `MAPPED-ADDRESS` 属性中的地址和端口号，如果存在不同，则说明此时客户端位于对称型 NAT 之后；否则位于受限圆锥型 NAT 或者端口受限圆锥型 NAT 之后，为了搞清楚具体是哪一种，我们还需要进行测试 3。
+
+在测试 3 中，客户端发送的 STUN Binding Req 仅需要设置 `CHANGE-REQUEST` 属性中的「改变端口号」标志位。如果客户端没有收到 Resp，则说明此时客户端位于端口受限圆锥型 NAT 之后；如果客户端收到了 Resp，则说明此时客户端位于受限圆锥型 NAT 之后。
+
+当然啦，如果客户端和服务器之间有多个 NAT，则上述 STUN 流程将会推断出整个链路中限制最严格的那个 NAT 类型。客户端也需要定期重试，检查网络状态是否发生了变化。
 
 ## TURN
 
