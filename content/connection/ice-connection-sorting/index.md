@@ -4,6 +4,8 @@ description: SDP 配置的优先级并不是决定性因素 🧐
 ogImage: '../../assets/book.jpg'
 ---
 
+**本文所有源码均基于 WebRTC M85 (branch-heads/4183) 版本进行分析。**
+
 在 [PeerConnection 连接流程](../peer-connection/) 中，当 Peer Initiator 收到 answerSdp 之后便会开始 ICE 流程。在 answerSdp 中可能包含多条 ICE candidates（候选服务器）信息，此时 WebRTC 便会分别和这些 candidates 建立连接，然后选出其中最优的那条连接作为配对结果进行通话。
 
 ```cpp:title=候选服务器信息示例

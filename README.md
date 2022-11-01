@@ -20,6 +20,7 @@ Learning WebRTC the Hard Way 👀
 - [ICE 连接排序规则](https://webrtc.mthli.com/connection/ice-connection-sorting/)
 - [视频推流过程](https://webrtc.mthli.com/media/video-outbound/)
 - [视频帧名词解释](https://webrtc.mthli.com/lost/video-frame-words/)
+- [视频降级原因](https://webrtc.mthli.com/lost/video-quality-limitation/)
 - [临界锁实现](https://webrtc.mthli.com/code/criticalsection/)
 - [信号槽机制](https://webrtc.mthli.com/code/sigslot/)
 - [智能指针](https://webrtc.mthli.com/code/smart-pointers/)

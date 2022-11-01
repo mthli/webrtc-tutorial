@@ -4,6 +4,8 @@ description: 在视频帧中插入自定义数据 🥪
 ogImage: '../../assets/book.jpg'
 ---
 
+**本文所有源码均基于 WebRTC M85 (branch-heads/4183) 版本进行分析。**
+
 在 [视频推流过程](https://webrtc.mthli.com/connection/video-streaming-process/#%E6%B7%BB%E5%8A%A0%E6%BB%A4%E9%95%9C) 一文中笔者介绍了给视频添加滤镜的方法，是在视频帧被编码前对其进行处理。有时我们还需要在视频帧被编码后对其进行处理，插入一些自定义数据，比如插入 H.264 定义的 SEI（Supplemental Enhancement Information，补充增强信息）。
 
 此时便可以使用 [WebRTC Insertable Streams API](https://github.com/w3c/webrtc-encoded-transform)，这组 API 在 WebRTC M83 (branch-heads/4103) 版本被引入，会分别在视频帧被编码后且发送前、或者被接收后且解码前被调用。由于笔者是 Native 开发，因此这里直接给出 C++ 代码；前端开发者则可以直接参照 W3C [对应文档](https://github.com/w3c/webrtc-encoded-transform/blob/main/explainer.md)。

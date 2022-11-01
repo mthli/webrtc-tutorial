@@ -4,6 +4,8 @@ description: 使用观察者模式进行代码解耦 🖖
 ogImage: './sigslot.png'
 ---
 
+**本文所有源码均基于 WebRTC M85 (branch-heads/4183) 版本进行分析。**
+
 在阅读 WebRTC 源码过程中，经常可以看到 [sigslot](http://sigslot.sourceforge.net/)（信号槽）相关的代码调用，例如：
 
 ```cpp:title=peer_connection.cc

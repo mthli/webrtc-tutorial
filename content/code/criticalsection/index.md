@@ -4,6 +4,8 @@ description: 在构造函数中加锁，在析构函数中解锁 🧐
 ogImage: '../../assets/book.jpg'
 ---
 
+**本文所有源码均基于 WebRTC M85 (branch-heads/4183) 版本进行分析。**
+
 在阅读 WebRTC 源码过程中，经常可以看到 `rtc::CritScope` 相关的代码调用，例如：
 
 ```cpp:title=rtp_video_sender.cc
