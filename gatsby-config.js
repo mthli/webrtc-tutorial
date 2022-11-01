@@ -79,7 +79,7 @@ module.exports = {
           '常见问题': [
             '[获取视频旋转角度](https://webrtc.mthli.com/basic/rtp-introduction/#%E8%8E%B7%E5%8F%96%E8%A7%86%E9%A2%91%E6%97%8B%E8%BD%AC%E8%A7%92%E5%BA%A6)',
             '[添加滤镜](https://webrtc.mthli.com/media/video-outbound/#%E6%B7%BB%E5%8A%A0%E6%BB%A4%E9%95%9C)',
-            '[编码前丢帧](http://localhost:8000/lost/video-quality-limitation/#%E7%BC%96%E7%A0%81%E5%89%8D%E4%B8%A2%E5%B8%A7)',
+            '[编码前丢帧](https://webrtc.mthli.com/lost/video-quality-limitation/#%E7%BC%96%E7%A0%81%E5%89%8D%E4%B8%A2%E5%B8%A7)',
             'common/frame-transformer/index',
             // TODO
           ],
