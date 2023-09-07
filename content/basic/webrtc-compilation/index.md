@@ -44,6 +44,8 @@ export PATH=/path/to/depot_tools:$PATH
 然后执行如下命令，整个过程需要大约 40 分钟，请保持耐心 🙏
 
 ```bash
+#添加完depot_tools到PATH之后，需要在任意目录下运行 gclient ，它会自动update depot_tools一些组件，如果直接运行fetch命令，可能会缺乏一些组件报错
+$ gclient
 # 创建并切换到 ~/webrtc（也可以是自定义路径）
 $ mkdir ~/webrtc && cd "$_"
 # 拉取并同步 WebRTC 的最新代码
